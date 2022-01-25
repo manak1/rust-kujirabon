@@ -21,3 +21,6 @@ fn encrypt(text: &str, shift: i16) -> String {
 }
 
 
+fn kakezan(num1: i64, num2: i64) -> i64 {
+    return num1 * num2;
+}
