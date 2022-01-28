@@ -1,18 +1,7 @@
 use rand::seq::SliceRandom;
 
 fn main() {
-    let a_vec : Vec<u32> = vec![100,200,300];
-    for i in a_vec {
-        println!("{}",i);
-    }
-
-    let b_vec: Vec<&str> = vec!["A","B","C"];
-
-    for i in b_vec {
-        println!("{}",i);
-    }
-
-    bingo_list();
+    bingo_list_vec();
 }
 
 fn bingo_list() {
@@ -35,5 +24,20 @@ fn bingo_list() {
             }
         }
         println!("");
+    }
+}
+
+fn bingo_list_vec() {
+    let mut nums: Vec<u32> = vec![];
+    for i in 1..=75 {
+        nums.push(i);
+    }
+    let mut rng = rand::thread_rng();
+    nums.shuffle(&mut rng);
+
+    for i in 0..25 {
+        if i == 12 {print!("  *,")}
+        else {print!("{:3},", nums[i]);}
+        if i % 5 == 4 { println!("");}
     }
 }
