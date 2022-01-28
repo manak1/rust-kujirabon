@@ -1,6 +1,21 @@
 use rand::seq::SliceRandom;
 
 fn main() {
+    let a_vec : Vec<u32> = vec![100,200,300];
+    for i in a_vec {
+        println!("{}",i);
+    }
+
+    let b_vec: Vec<&str> = vec!["A","B","C"];
+
+    for i in b_vec {
+        println!("{}",i);
+    }
+
+    bingo_list();
+}
+
+fn bingo_list() {
     // 1~75までの値を代入
     let mut nums = [0;75];
 
@@ -21,5 +36,4 @@ fn main() {
         }
         println!("");
     }
-    
 }
